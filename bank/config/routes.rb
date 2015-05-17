@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'sessions#new'
+  get 'home', to: "bank_accounts#show"
+
+  root 'bank_accounts#show'
   get 'login', to: 'sessions#new'
   delete 'logout', to: 'sessions#destroy'
   post 'login', to: 'sessions#create'

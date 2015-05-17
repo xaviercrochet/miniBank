@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 xavier:
+  id: 1
   name: xavier
   password: test
 
 paul:
+  id: 2
   name: paul
   password: test
