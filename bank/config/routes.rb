@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'home', to: "bank_accounts#show"
-
+  resources :transactions, only: [:new, :create]
   root 'bank_accounts#show'
   get 'login', to: 'sessions#new'
   delete 'logout', to: 'sessions#destroy'

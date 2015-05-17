@@ -1,0 +1,25 @@
+.row
+	.col-md-4.col-md-offset-4
+		-if @transaction.errors.any?
+			- @transaction.errors.full_messages.each do |error|
+				%p
+					= error
+
+		.panel.panel-default
+			.panel-heading
+				Send Money
+				.pull-right
+					Balance:
+					= current_user.bank_account.balance
+					$
+			.panel-body
+				.form
+					= form_for @transaction do |f|
+						.form-group
+							= f.label :amount
+							= f.number_field :amount, class: "form-control"
+						.form-group
+							= f.label :recipient
+							- account_names = @accounts.map{|account| [account.user.name, account.id]}
+							= f.select :recipient_account_id, account_names
+						= f.submit "$", class: "btn btn-submit pull-right"

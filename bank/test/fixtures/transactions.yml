@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bank_account_id: 1
+  recipient_account_id: 2
+  amount: 20
+two:
+  bank_account_id: 1
+  recipient_account_id: 2
+  amount: 424242
+

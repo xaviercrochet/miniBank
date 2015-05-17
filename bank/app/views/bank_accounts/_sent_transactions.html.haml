@@ -1,0 +1,8 @@
+- transactions.each do |transaction|
+	%p
+		You sent
+		= transaction.amount 
+		$ to
+		= transaction.recipient_account.user.name
+		on
+		= transaction.created_at.to_formatted_s(:short)

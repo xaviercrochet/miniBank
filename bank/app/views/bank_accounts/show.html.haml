@@ -4,6 +4,10 @@
 	Balance:
 	= @bank_account.balance
 %p
-	= link_to "New Transfer", '#'
-%p
-	= link_to "Transactions History", '#' 
+	= link_to "New Transfer", new_transaction_path(@bank_account)
+%h3
+	Received Transfers
+= render 'received_transactions', transactions: @bank_account.received_transactions
+%h3
+	Sent Transfers
+= render 'sent_transactions', transactions: @bank_account.transactions
